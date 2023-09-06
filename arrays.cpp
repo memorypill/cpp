@@ -37,7 +37,7 @@ void arrays_example()
     *arr_pointer2++ = 1;
     *arr_pointer2++ = 2;
 
-    // another way
+    // standard way
     arr_pointer1[0] = -1;
 
     int* arr_pointer3 = arr_pointer1;

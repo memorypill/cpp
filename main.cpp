@@ -41,6 +41,10 @@ int main()
 	unions_example();
 	structs_example();
 
+	// constructors
+	explisit_constructor_example();
+	default_constructors_example();
+
 	// casts
 	casts_example();
 
@@ -48,15 +52,22 @@ int main()
 	custom_operators_example();
 
 	// inheritance_abstract_virtual_friend
+	inheritance_example();
 
 	// templates
-	
+	templates_example();
+
 	// lambda
-	
+	lambda_example();
+
 	// coroutines
 	coroutines_example();
 
 	// thread
+	thread_example();
+
+	// future
+	future_example();
 
 	return 0;
 }

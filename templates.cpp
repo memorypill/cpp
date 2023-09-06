@@ -1,141 +1,145 @@
 #include <iostream>
 #include <vector>
+#include <concepts>
 
-// !!! requires
-// !!! concept
-// !!! auto
+// class vs typename
 
-// Templates
+template<class T>
+T templated_function1(T arg) { return arg + 1; }
 
-template <typename T>
-// template <class T> - the same
-const T& max1(const T& a, const T& b)
+template<typename T> // [typename] equivalent to [class]
+T templated_function2(T arg) { return arg + 1; }
+
+// non-type parameter or value parameter
+template <int int_value>
+int get_first_zero()
 {
-	return (a > b) ? a : b;
+	return int_value;
 }
 
-
-template <typename T, int array_size>
-int get_first_zero(const T& array)
+// default template type
+template <class T = char>
+void print_with_default(T value)
 {
-	for (int i = 0; i < array_size; i++)
-	{
-		if (0 == array[i])
-			return i;
-	}
-
-	return -1;
-}
-//
-//template<>
-//int get_first_zero<int[3], 4>(const int[3] array)
-//{
-//	for (int i = 0; i < array_size; i++)
-//	{
-//		if (0 == array[i])
-//			return i;
-//	}
-//
-//	return -1;
-//}
-
-//template <class ...T>
-//void fun1()
-//{
-//
-//}
-
-template<class T, int retry_count>
-void print_n_times(T t)
-{
-	for (int i = 0; i < retry_count; i++)
-	{
-		std::cout << t << std::endl;
-	}
+	std::cout << value << std::endl;
 }
 
-template<int retry_count>
-void print_n_times(double t)
-{
-	for (int i = 0; i < retry_count; i++)
-	{
-		std::cout << std::scientific << t << std::endl;
-	}
-}
-
-
+// template specialization
 template <class T>
 void print_value(T value)
 {
-	std::cout << std::scientific << value << '\n';
-}
-
-template <class T = char>
-void print_value2(T value)
-{
-	std::cout << "symbol: " << value << '\n';
+	std::cout << value << std::endl;
 }
 
 template <>
 void print_value<double>(double value)
 {
-	std::cout << std::scientific << value << '\n';
+	std::cout << "double: " << std::scientific << value << std::endl;
 }
 
-// template with ...
-
+// templated class
 template<typename T>
-int sum(T t)
+class TemplatedClass
 {
-	return t;
+public:
+	T value;
+};
+
+// T is templated class
+template<template<typename> typename T>
+class ClassWithTAsTemplatedClass
+{
+public:
+	T<int> value;
+};
+
+// Parameter pack or variadic templates
+template<typename... TArgs>
+auto sum(TArgs... args)
+{
+	return (args + ...); // fold-expressions C++17
 }
 
-template<typename TFirst, typename... TRest>
-int sum(TFirst first, TRest... rest)
-{
-	return first + sum(rest...);
-}
-
-template<typename... T>
-void fun1(T... t)
-{
-	int res = sum(t...);
-	std::cout << res << std::endl;
-}
-
-
-template<typename T, template<typename U, int I> class Arr>
-void fun10(T t, Arr<T, 10> arr)
-{
-
-}
-
+// auto + decltype
 template<typename T>
-auto add(const T& a, const T& b) -> decltype(a + b) {
+auto add(const T& a, const T& b) -> decltype(a + b)
+{
 	return a + b;
 }
 
-
-//template <typename T> requires std::is_same<T, int>::value
-//T sum(T a, T b)
-//{
-//	return a + b;
-//}
-
-//template <typename T>
-//concept size = sizeof(T) <= sizeof(int);
-
-// Шаблон, принимает шаблонный класс
+// requires
 template <typename T>
-class InnerClass
+	requires std::is_same<T, int>::value
+T sum_of_int(T a, T b)
 {
-public:
-	using Type = std::vector<T>;
+	return a + b;
+}
+
+// concept https://devdocs.io/cpp/header/concepts
+template <typename T>
+concept sizeof_4_concept = sizeof(T) == 4;
+
+
+template <sizeof_4_concept T>
+void print_value_with_sizeof_4(T value)
+{
+	std::cout << value << std::endl;
+}
+
+// concept + requires
+template <typename T>
+concept unsigned_concept = requires(T t)
+{
+	{ t + 0 } -> std::unsigned_integral;
 };
 
-template <template<class> class T>
-class C
+void function_with_concept(unsigned_concept auto u)
 {
-public:
-	typename T<int>::Type T1;
-};
+}
+
+void templates_example()
+{
+	std::cout << "templates_example" << std::endl;
+
+	int result1 = templated_function1<int>(1);
+	int result2 = templated_function2<int>(1);
+
+	std::cout << "result1=" << result1 << " result2=" << result2 << std::endl;
+
+	int result3 = get_first_zero<1>();
+
+	std::cout << "result3=" << result3 << std::endl;
+
+	print_with_default('w'); // char
+	print_with_default(42); // UB
+
+	// template specialization
+	print_value(1);
+	print_value(1.123);
+
+	// templated calss with templated class T
+	ClassWithTAsTemplatedClass<TemplatedClass> classWithTAsTemplatedClass;
+	classWithTAsTemplatedClass.value.value = 1;
+
+	// variadic templates
+	int total = sum(1, 2, 3, 4, 5, 6, 7);
+	std::cout << total << std::endl;
+
+	int result4 = add(2, 2);
+	std::cout << "result4=" << result4 << std::endl;
+
+	// requires
+	int result5 = sum_of_int(1, 1);
+	// result5 = sum_of_int(1, 1.1); // error
+	std::cout << "result5=" << result5 << std::endl;
+
+	// concept
+	int i = 1;
+	//print_value_with_sizeof_4_v2(3);
+	//print_value_with_sizeof_4(1.0f); // error
+
+	std::vector<int> intVector = { 1, 2, 3, 4, 5 };
+	
+	function_with_concept(1U);
+	//function_with_concept(1); // error
+}

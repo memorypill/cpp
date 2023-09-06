@@ -38,23 +38,30 @@ void enum_example();
 void unions_example();
 void structs_example();
 
+// constructors
+void explisit_constructor_example();
+void default_constructors_example();
+
 // casts
 void casts_example();
 
 // custom_operators
 void custom_operators_example();
 
-// oop
+// inheritance_abstract_virtual_friend
+void inheritance_example();
 
 // templates
+void templates_example();
 
 // lambda
+void lambda_example();
 
 // coroutines
 void coroutines_example();
 
-// atomic
-
 // thread
+void thread_example();
 
-// reflection
+//future
+void future_example();

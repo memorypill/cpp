@@ -121,7 +121,7 @@ private:
 	}
 };
 
-void learn_virtual()
+void inheritance_example()
 {
 	SubClass1 class1;
 

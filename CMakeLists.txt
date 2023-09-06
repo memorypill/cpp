@@ -19,11 +19,13 @@ add_executable (cpp_memorypill "main.cpp"
 	"arrays.cpp"
 	"enums.cpp"
 	"union_vs_struct_vs_class.cpp"
+	"constructors.cpp"
+	"casts.cpp"
 	"custom_operators.cpp"
 	"inheritance_abstract_virtual_friend.cpp"
 	"templates.cpp"
 	"lambda.cpp"
 	"coroutines.cpp"
-	
 	"thread.cpp"
-	 "constructors.cpp" "future.cpp" "casts.cpp")
+	"future.cpp"
+	 )

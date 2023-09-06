@@ -1,6 +1,6 @@
 #include <iostream>
 
-//import my_module1;
+import my_module1;
 
 namespace namespace1
 {
@@ -26,5 +26,5 @@ void modules_and_namespaces()
 	namespace1::function();
 	namespace2::function();
 
-	//hello_from_module1();
+	hello_from_module1();
 }
