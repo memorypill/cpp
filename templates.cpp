@@ -38,7 +38,7 @@ void print_value<double>(double value)
 }
 
 // templated class
-template<typename T>
+template<class T>
 class TemplatedClass
 {
 public:
@@ -46,7 +46,7 @@ public:
 };
 
 // T is templated class
-template<template<typename> typename T>
+template<template<class> class T>
 class ClassWithTAsTemplatedClass
 {
 public:
@@ -54,21 +54,21 @@ public:
 };
 
 // Parameter pack or variadic templates
-template<typename... TArgs>
+template<class... TArgs>
 auto sum(TArgs... args)
 {
 	return (args + ...); // fold-expressions C++17
 }
 
 // auto + decltype
-template<typename T>
+template<class T>
 auto add(const T& a, const T& b) -> decltype(a + b)
 {
 	return a + b;
 }
 
 // requires
-template <typename T>
+template <class T>
 	requires std::is_same<T, int>::value
 T sum_of_int(T a, T b)
 {
@@ -76,7 +76,7 @@ T sum_of_int(T a, T b)
 }
 
 // concept https://devdocs.io/cpp/header/concepts
-template <typename T>
+template <class T>
 concept sizeof_4_concept = sizeof(T) == 4;
 
 
@@ -87,7 +87,7 @@ void print_value_with_sizeof_4(T value)
 }
 
 // concept + requires
-template <typename T>
+template <class T>
 concept unsigned_concept = requires(T t)
 {
 	{ t + 0 } -> std::unsigned_integral;
