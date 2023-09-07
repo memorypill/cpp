@@ -7,7 +7,7 @@
 constexpr int Version = 1;
 constinit int NeedUpgadeVersion = Version + 1;
 
-consteval int compute_fibonacci(int n) {
+consteval int compute_fibonacci(const int n) {
 
 	if (n == 0)
 		return 0;
@@ -24,7 +24,10 @@ void compile_time_example()
 {
 	std::cout << "compile_time_example" << std::endl;
 
-	// Version = 2; - compilation error
+	static_assert(Version > 0);
+	// static_assert(Version == 0); // <- compilation error
+	
+	// Version = 2; // -> compilation error
 	NeedUpgadeVersion = Version + 2; // ok
 
 	std::cout << FibonacciOf7 << std::endl;

@@ -17,10 +17,10 @@ void future_example()
     async_task().get();
 
     std::future<int> future_result = std::async([]() {
-        return 42; // Просто возвращаем значение 42
+        return 42;
         });
 
     int result = future_result.get();
 
-    std::cout << "Результат: " << result << std::endl;
+    std::cout << "result: " << result << std::endl;
 }

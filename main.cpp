@@ -43,7 +43,8 @@ int main()
 
 	// constructors
 	explisit_constructor_example();
-	default_constructors_example();
+	deleted_copy_constructor_example();
+	deleted_move_constructor_example();
 
 	// casts
 	casts_example();
@@ -56,6 +57,9 @@ int main()
 
 	// templates
 	templates_example();
+
+	// exceptions_
+	exceptions_example();
 
 	// lambda
 	lambda_example();

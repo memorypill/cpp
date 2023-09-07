@@ -34,34 +34,6 @@ void explisit_constructor_example()
 	ClassWithExplicitConstructor classWithExplicitConstructor3{ 3 };
 }
 
-class ClassWithDefaultConstructor
-{
-public:
-	int Prop1 = 1;
-
-	ClassWithDefaultConstructor()
-	{
-
-	}
-
-	//ClassWithDefaultConstructor(ClassWithDefaultConstructor& copy) = delete;
-	//ClassWithDefaultConstructor(ClassWithDefaultConstructor&& copy) = delete;
-};
-
-void default_coustructors_example()
-{
-	//ClassWithDefaultConstructor obj1;
-//obj1.Prop1 = 37;
-
-//ClassWithDefaultConstructor obj2(obj1);
-
-	ClassWithDefaultConstructor obj3;
-	ClassWithDefaultConstructor& obj3Ref = obj3;
-	ClassWithDefaultConstructor obj4(obj3Ref);
-
-	std::cout << obj3.Prop1 << std::endl; // 37 - copied
-}
-
 // Inheritance
 
 class BaseClassWithConstructor
@@ -88,30 +60,44 @@ public:
 	}
 };
 
-// copy and move
+// Copy and move constructors
 
-// Constructor
-
-class ClassWithDeletedCopyAndMoveConstructors
+class ClassWithDeletedCopyConstructor
 {
 public:
-	ClassWithDeletedCopyAndMoveConstructors()
+	ClassWithDeletedCopyConstructor()
 	{
 	}
 
-	ClassWithDeletedCopyAndMoveConstructors(ClassWithDeletedCopyAndMoveConstructors& copy) = delete;
-	ClassWithDeletedCopyAndMoveConstructors(ClassWithDeletedCopyAndMoveConstructors&& move) = delete;
+	ClassWithDeletedCopyConstructor(ClassWithDeletedCopyConstructor& copy) = delete;
+	ClassWithDeletedCopyConstructor(ClassWithDeletedCopyConstructor&& move) = default;
 };
 
-void default_constructors_example()
+class ClassWithDeletedMoveConstructor
 {
-	//ClassWithDeletedCopyAndMoveConstructors c1;
-	//ClassWithDeletedCopyAndMoveConstructors c2 { c1 };
-	//ClassWithDeletedCopyAndMoveConstructors c3 = ClassWithDeletedCopyAndMoveConstructors{};
+public:
+	ClassWithDeletedMoveConstructor()
+	{
+	}
 
-	ClassWithDeletedCopyAndMoveConstructors c3 = ClassWithDeletedCopyAndMoveConstructors{};
+	ClassWithDeletedMoveConstructor(ClassWithDeletedMoveConstructor& copy) = default;
+	ClassWithDeletedMoveConstructor(ClassWithDeletedMoveConstructor&& move) = delete;
+};
 
-	//ClassWithDeletedCopyAndMoveConstructors c4 = c3; // Ошибка компиляции: конструктор копирования удален
-	//ClassWithDeletedCopyAndMoveConstructors c5 = std::move(c3); // Ошибка компиляции: конструктор перемещения удален
+void deleted_copy_constructor_example()
+{
+	ClassWithDeletedCopyConstructor c1;
+	//ClassWithDeletedCopyConstructor c2 { c1 };  // <- compilation error
+	//ClassWithDeletedCopyConstructor c3(c1);  // <- compilation error
+
+	ClassWithDeletedCopyConstructor c4 = std::move(ClassWithDeletedCopyConstructor{}); // <- ok
 }
 
+void deleted_move_constructor_example()
+{
+	ClassWithDeletedMoveConstructor c1;
+	ClassWithDeletedMoveConstructor c2{ c1 };  // <- ok
+	ClassWithDeletedMoveConstructor c3(c1);  // <- ok
+
+	//ClassWithDeletedMoveConstructor c4 = std::move(ClassWithDeletedMoveConstructor{}); // <- compilation error
+}

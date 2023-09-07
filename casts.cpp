@@ -8,7 +8,7 @@ void casts_example()
 	std::cout << "casts_example" << std::endl;
 
 	// static_cast
-	float f = 3.14;
+	float f = 3.14f;
 	int i = static_cast<int>(f);
 
 	// dynamic_cast
@@ -32,7 +32,7 @@ void casts_example()
 	std::cout << "address=" << address << std::endl;
 
 	// C-style cast
-	float pi = 3.14;
+	float pi = 3.14f;
 	int int_pi = (int)f;
 
 	std::cout << int_pi << std::endl;

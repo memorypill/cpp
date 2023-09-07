@@ -40,7 +40,8 @@ void structs_example();
 
 // constructors
 void explisit_constructor_example();
-void default_constructors_example();
+void deleted_copy_constructor_example();
+void deleted_move_constructor_example();
 
 // casts
 void casts_example();
@@ -53,6 +54,9 @@ void inheritance_example();
 
 // templates
 void templates_example();
+
+// exceptions_
+void exceptions_example();
 
 // lambda
 void lambda_example();
