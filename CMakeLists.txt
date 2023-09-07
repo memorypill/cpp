@@ -6,8 +6,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(my_module1
-    "my_module1.ixx"
- "exceptions.cpp")
+    "my_module1.ixx")
 
 # Add source to this project's executable.
 add_executable (cpp_memorypill "main.cpp"
