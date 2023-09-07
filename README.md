@@ -2,7 +2,7 @@
 
 **Project needs your support:**
 
-| #  | PaymentSystem                   | Addreess                                                                                        |
+| #  | Payment system                  | Address                                                                                        |
 |----|---------------------------------|-------------------------------------------------------------------------------------------------|
 | 1  | **Bitcoin BTC**                 | bc1qw6zm5q6p6v5apps5yp9pyxwan6xuqk8qupc3k6                                                      |
 | 2  | **Ethereum ETH**                | 0x93dC5851AC277b5b528D55Ca5Bd5AA52e47d47EA                                                      |
