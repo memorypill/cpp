@@ -65,7 +65,9 @@ void refs_example()
 	int a = 1;
 	int& a_ref = a;
 	change_ref(a);
+	// change_ref(1); // <- compilation error (r-value ref)
 	std::cout << a_ref << std::endl; // 2
 	
-	r_value_ref(1);
+	r_value_ref(1); // ok
+	// r_value_ref(a); // <- compilation error (l-value ref)
 }
