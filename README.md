@@ -78,3 +78,31 @@
 | 72 | [while](https://github.com/memorypill/cpp/blob/main/cycles.cpp)                                    |                            |
 | 73 | xor                                                                                                | alternative for ^          |
 | 74 | xor_eq                                                                                             | alternative for ^=         |
+
+### C++11 keywords
+
+| #  | C++ keyword                                                                         | Remark |
+| -- | ----------------------------------------------------------------------------------- | ------ |
+| 75 | [alignas](https://github.com/memorypill/cpp/blob/main/union_vs_struct_vs_class.cpp) | C++11  |
+| 76 | [alignof](https://github.com/memorypill/cpp/blob/main/union_vs_struct_vs_class.cpp) | C++11  |
+| 77 | [char16_t](https://github.com/memorypill/cpp/blob/main/fundamental_types.cpp)       | C++11  |
+| 78 | [char32_t](https://github.com/memorypill/cpp/blob/main/fundamental_types.cpp)       | C++11  |
+| 79 | [constexpr](https://github.com/memorypill/cpp/blob/main/compile_time.cpp)           | C++11  |
+| 80 | [decltype](https://github.com/memorypill/cpp/blob/main/templates.cpp)               | C++11  |
+| 81 | noexcept                                                                            | C++11  |
+| 82 | nullptr                                                                             | C++11  |
+| 83 | [static_assert](https://github.com/memorypill/cpp/blob/main/compile_time.cpp)       | C++11  |
+| 84 | [thread_local](https://github.com/memorypill/cpp/blob/main/thread.cpp)              | C++11  |
+
+### C++20 keywords
+
+| #  | C++ keyword                                                               | Remark |
+| -- | ------------------------------------------------------------------------- | ------ |
+| 85 | char8_t                                                                   |        |
+| 86 | [concept](https://github.com/memorypill/cpp/blob/main/templates.cpp)      | C++20  |
+| 87 | [consteval](https://github.com/memorypill/cpp/blob/main/compile_time.cpp) | C++20  |
+| 88 | [constinit](https://github.com/memorypill/cpp/blob/main/compile_time.cpp) | C++20  |
+| 89 | [co_await](https://github.com/memorypill/cpp/blob/main/coroutines.cpp)    | C++20  |
+| 90 | [co_return](https://github.com/memorypill/cpp/blob/main/coroutines.cpp)   | C++20  |
+| 91 | [co_yield](https://github.com/memorypill/cpp/blob/main/coroutines.cpp)    | C++20  |
+| 92 | [requires](https://github.com/memorypill/cpp/blob/main/templates.cpp)     | C++20  |
