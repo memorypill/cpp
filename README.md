@@ -98,7 +98,7 @@
 
 | #  | C++ keyword                                                               | Remark |
 | -- | ------------------------------------------------------------------------- | ------ |
-| 85 | char8_t                                                                   |        |
+| 85 | char8_t                                                                   | C++20  |
 | 86 | [concept](https://github.com/memorypill/cpp/blob/main/templates.cpp)      | C++20  |
 | 87 | [consteval](https://github.com/memorypill/cpp/blob/main/compile_time.cpp) | C++20  |
 | 88 | [constinit](https://github.com/memorypill/cpp/blob/main/compile_time.cpp) | C++20  |
@@ -106,3 +106,24 @@
 | 90 | [co_return](https://github.com/memorypill/cpp/blob/main/coroutines.cpp)   | C++20  |
 | 91 | [co_yield](https://github.com/memorypill/cpp/blob/main/coroutines.cpp)    | C++20  |
 | 92 | [requires](https://github.com/memorypill/cpp/blob/main/templates.cpp)     | C++20  |
+
+### C++23 keywords
+
+| #  | C++ keyword     | Remark        |
+| -- | --------------- | ------------- |
+| 93 | atomic_cancel   | TM TS         |
+| 94 | atomic_commit   | TM TS         |
+| 95 | atomic_noexcept | TM TS         |
+| 96 | reflexpr        | reflection TS |
+| 97 | synchronized    | TM TS         |
+
+### Identifiers with special meaning
+
+| #   | C++ keyword                                                                                     | Remark |
+| --- | ----------------------------------------------------------------------------------------------- | ------ |
+| 98  | final                                                                                           | C++11  |
+| 99  | [override](https://github.com/memorypill/cpp/blob/main/inheritance_abstract_virtual_friend.cpp) | C++11  |
+| 100 | transaction_safe                                                                                | TM TS  |
+| 101 | transaction_safe_dynamic                                                                        | TM TS  |
+| 102 | [import](https://github.com/memorypill/cpp/blob/main/modules_and_namespaces.cpp)                | C++20  |
+| 103 | [module](https://github.com/memorypill/cpp/blob/main/modules_and_namespaces.cpp)                | C++20  |
