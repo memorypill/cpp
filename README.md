@@ -107,7 +107,7 @@
 | 91 | [co_yield](https://github.com/memorypill/cpp/blob/main/coroutines.cpp)    | C++20  |
 | 92 | [requires](https://github.com/memorypill/cpp/blob/main/templates.cpp)     | C++20  |
 
-### C++23 keywords
+### C++ TM TS keywords
 
 | #  | C++ keyword     | Remark        |
 | -- | --------------- | ------------- |
