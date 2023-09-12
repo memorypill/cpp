@@ -13,7 +13,7 @@ void arrays_example()
 {
     std::cout << "arrays_example" << std::endl;
 
-	int simple_array[] { 0, 2, 3 }; // stack
+    int simple_array[]{ 0, 2, 3 }; // stack
 
     simple_array[0] = 1;
 
@@ -49,7 +49,7 @@ void arrays_example()
     std::cout << (*arr_pointer3++) << std::endl; // 2
 
     delete[] arr_pointer1; // <- deallocate memory
-	
+
     // multi-dimensional
     int arr2x3[2][3] =
     {

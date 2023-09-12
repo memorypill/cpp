@@ -24,7 +24,7 @@ void fun1()
 #define ADD(a, b) a + b
 
 #define BAD_MULTILINE_MACROS(a, b) std::cout << a << std::endl; \
-		std::cout << b << std::endl
+        std::cout << b << std::endl
 
 // do { ... } while (0) pattern
 #define GOOD_MULTILINE_MACROS(a, b) \
@@ -43,7 +43,7 @@ void macros_example()
 {
     std::cout << "macros_example" << std::endl;
 
-	if (ADD(2, 2) == 5)
+    if (ADD(2, 2) == 5)
         BAD_MULTILINE_MACROS(1, 2); // problem: second line is executed in any case!
 
     if (ADD(2, 2) == 5)

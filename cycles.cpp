@@ -2,60 +2,60 @@
 
 void cycles_example()
 {
-	int j = 10;
+    int j = 10;
 
-	// pre
-	while (true)
-	{
-		if (j <= 0)
-			break;
+    // pre
+    while (true)
+    {
+        if (j <= 0)
+            break;
 
-		j--;
+        j--;
 
-		if (j == 5)
-			continue;
-	}
+        if (j == 5)
+            continue;
+    }
 
-	j = 10;
+    j = 10;
 
-	// post
-	do
-	{
-		switch (j)
-		{
-		case 1:
-			break;
-		case 2:
-			break;
-		default:
-			break;
-		}
+    // post
+    do
+    {
+        switch (j)
+        {
+        case 1:
+            break;
+        case 2:
+            break;
+        default:
+            break;
+        }
 
-		j--;
+        j--;
 
-	} while (j > 0);
+    } while (j > 0);
 
-	// for
-	for (int i = 0; i < 10; i++)
-	{
-	}
+    // for
+    for (int i = 0; i < 10; i++)
+    {
+    }
 
-	// foreach
-	int array1[10];
+    // foreach
+    int array1[10];
 
-	for (int element : array1)
-	{
-		std::cout << element << std::endl;
-	}
+    for (int element : array1)
+    {
+        std::cout << element << std::endl;
+    }
 
-	// goto (not recommended)
+    // goto (not recommended)
 
-	j = 10;
+    j = 10;
 
 label:
 
-	j--;
+    j--;
 
-	if (j > 0)
-		goto label;
+    if (j > 0)
+        goto label;
 }
