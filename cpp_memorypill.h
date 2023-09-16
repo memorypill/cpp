@@ -69,3 +69,6 @@ void thread_example();
 
 //future
 void future_example();
+
+// unique_shared_weak_move_forward
+void forward_example();

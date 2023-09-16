@@ -31,6 +31,6 @@ add_executable (cpp_memorypill "main.cpp"
     "coroutines.cpp"
     "thread.cpp"
     "future.cpp"
-     )
+    "unique_shared_weak_move_forward.cpp")
 
 target_link_libraries(cpp_memorypill PRIVATE my_module1)

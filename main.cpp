@@ -73,5 +73,8 @@ int main()
     // future
     future_example();
 
+    // unique_shared_weak_move_forward
+    forward_example();
+
     return 0;
 }

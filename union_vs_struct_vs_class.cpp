@@ -65,7 +65,7 @@ struct InheritedStruct : BaseStruct
 {
     void test()
     {
-        this->public_method();
+        this->public_method(); // ok
     }
 };
 
@@ -99,6 +99,6 @@ class InheritedClass : BaseClass
 {
     void test()
     {
-        //this->public_method(); // <- compilation error
+        //this->private_method(); // <- compilation error
     }
 };
