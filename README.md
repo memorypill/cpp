@@ -127,3 +127,29 @@
 | 101 | transaction_safe_dynamic                                                                        | TM TS  |
 | 102 | [import](https://github.com/memorypill/cpp/blob/main/modules_and_namespaces.cpp)                | C++20  |
 | 103 | [module](https://github.com/memorypill/cpp/blob/main/modules_and_namespaces.cpp)                | C++20  |
+
+### Preprocessor directives
+
+| #  | C++ directive       | Remark |
+| -- | ------------------- | ------ |
+| 1  | if                  |        |
+| 2  | elif                |        |
+| 3  | else                |        |
+| 4  | endif               |        |
+| 5  | ifdef               |        |
+| 6  | ifndef              |        |
+| 7  | define              |        |
+| 8  | undef               |        |
+| 9  | include             |        |
+| 10 | line                |        |
+| 11 | error               |        |
+| 12 | pragma              |        |
+| 13 | defined             |        |
+| 14 | __has_include       | C++17  |
+| 15 | __has_cpp_attribute | C++20  |
+| 16 | export              | C++20  |
+| 17 | import              | C++20  |
+| 18 | module              | C++20  |
+| 19 | elifdef             | C++23  |
+| 20 | elifndef            | C++23  |
+| 21 | warning             | C++23  |
