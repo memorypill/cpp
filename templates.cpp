@@ -116,7 +116,7 @@ void templates_example()
 
     std::cout << "result1=" << result1 << " result2=" << result2 << std::endl;
 
-    int result3 = get_first_zero<1>();
+    int result3 = get_parameter<1>();
 
     std::cout << "result3=" << result3 << std::endl;
 
