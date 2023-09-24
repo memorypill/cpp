@@ -10,31 +10,19 @@ T templated_function1(T arg) { return arg + 1; }
 template<typename T> // [typename] equivalent to [class]
 T templated_function2(T arg) { return arg + 1; }
 
-
-class ClassForTemplate
-{
-public:
-    enum SubType { first };
-};
-
-template <class ClassName2, typename ClassName2::SubType value>
-typename ClassName2::SubType templated_function3()
+template <typename int value> // only typename is accepted!!!
+int templated_function3_example()
 {
     return value;
 }
 
-void templated_function3_example()
-{
-    templated_function3<ClassForTemplate, ClassForTemplate::SubType::first>();
-}
-
 // templated value
 template <class T>
-typename T::SubClass templated_value;
+typename T templated_value;
 
 // non-type parameter or value parameter
 template <int int_value>
-int get_first_zero()
+int get_parameter()
 {
     return int_value;
 }
