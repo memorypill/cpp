@@ -72,3 +72,4 @@ void future_example();
 
 // unique_shared_weak_move_forward
 void forward_example();
+void smart_ptr_example();

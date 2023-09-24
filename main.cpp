@@ -75,6 +75,7 @@ int main()
 
     // unique_shared_weak_move_forward
     forward_example();
+    smart_ptr_example();
 
     return 0;
 }
